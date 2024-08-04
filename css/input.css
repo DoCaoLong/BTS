@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply font-inter text-[16px] text-secondary;
+}
+
+.beautifully-item {
+    margin-right: 60px;
+}
+.trusted-item {
+    margin-right: 84px;
+}
+.gradient-card {
+    background: linear-gradient(180deg, #191919 0%, #000 100%);
+}
+
+.grid-auto-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.button-readmore-2 {
+    color: var(--White, #fff);
+    font-family: "Inter Tight";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+    display: flex;
+    height: 52px;
+    padding: 12px 24px;
+    align-items: center;
+    gap: 24px;
+    flex-shrink: 0;
+    border-radius: 36px;
+    background-image: url("/imgs/btn.png");
+    background-repeat: no-repeat;
+}
+
+.img-full {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bg-download {
+    background: url("/imgs/dow-banner.png");
+}

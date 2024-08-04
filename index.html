@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <!-- CSS -->
+        <link rel="stylesheet" href="dist/output.css" />
+        <!-- FONT -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100..900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/flickity@2/dist/flickity.min.css"
+        />
+        <!-- CSS -->
+        <style>
+            .mobile-menu {
+                transition: transform 0.3s ease-in-out;
+                transform: translateX(100%);
+                z-index: 12;
+            }
+            .mobile-menu-active {
+                transform: translateX(0);
+            }
+            .backdrop {
+                display: none;
+                transition: opacity 0.3s ease-in-out;
+                z-index: 11;
+            }
+            .backdrop-active {
+                display: block;
+                opacity: 0.5;
+            }
+            @media screen and (max-width: 767.98px) {
+                #home h1 {
+                    font-size: 32px;
+                }
+                #home h2 {
+                    font-size: 26px;
+                    text-align: center;
+                    margin: 0 auto;
+                }
+                #home h4 {
+                    font-size: 18px;
+                }
+                #home p {
+                    font-size: 14px;
+                }
+                #home .text-desc {
+                    font-size: 14px;
+                }
+                #home .gradient-card {
+                    padding: 24px;
+                }
+                #home #beautifully h2,
+                #home #largest h2,
+                #home #bts h2 {
+                    margin-bottom: 24px;
+                }
+            }
+        </style>
+    </head>
+    <body class="bg-black mx-auto relative">
+        <!-- header -->
+        <header class="bg-black z-10 static">
+            <div
+                class="container mx-auto flex justify-between items-center py-4 px-4 lg:px-0"
+            >
+                <div class="flex items-center gap-6">
+                    <div class="logo cursor-pointer z-10 static">
+                        <img src="./imgs/logo.svg" alt="Logo" />
+                    </div>
+                    <nav class="hidden md:flex space-x-2">
+                        <a
+                            href="#"
+                            class="hover:text-gray-400 px-4 py-2 text-nav"
+                            >Home</a
+                        >
+                        <a
+                            href="#"
+                            class="hover:text-gray-400 px-4 py-2 text-nav"
+                            >About Us</a
+                        >
+                        <a
+                            href="#"
+                            class="hover:text-gray-400 px-4 py-2 text-nav"
+                            >Roadmap</a
+                        >
+                        <a
+                            href="#"
+                            class="hover:text-gray-400 px-4 py-2 text-nav"
+                            >Docs</a
+                        >
+                    </nav>
+                </div>
+                <button
+                    class="text-nav hidden md:flex items-center justify-center h-10 px-4 py-2 gap-2 rounded-full border border-custom-gray shadow-btn bg-custom-gradient text-btn"
+                >
+                    Read more
+                    <img src="/imgs/arrow-1.svg" alt="" />
+                </button>
+                <button
+                    id="menu-toggle"
+                    class="md:hidden text-white focus:outline-none"
+                >
+                    <svg
+                        class="w-6 h-6"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"
+                        ></path>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- backdrop -->
+        <div
+            id="backdrop"
+            class="fixed inset-0 bg-black opacity-0 backdrop"
+        ></div>
+
+        <!-- header mobile -->
+        <div
+            id="mobile-menu"
+            class="fixed inset-y-0 right-0 w-64 bg-black text-white mobile-menu"
+        >
+            <div class="flex justify-end p-4">
+                <button id="close-menu" class="text-white focus:outline-none">
+                    <svg
+                        class="w-6 h-6"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12"
+                        ></path>
+                    </svg>
+                </button>
+            </div>
+            <nav class="flex flex-col items-center space-y-2 py-4">
+                <a href="#" class="hover:text-gray-400 px-4 py-2 text-nav"
+                    >Home</a
+                >
+                <a href="#" class="hover:text-gray-400 px-4 py-2 text-nav"
+                    >About Us</a
+                >
+                <a href="#" class="hover:text-gray-400 px-4 py-2 text-nav"
+                    >Roadmap</a
+                >
+                <a href="#" class="hover:text-gray-400 px-4 py-2 text-nav"
+                    >Docs</a
+                >
+            </nav>
+        </div>
+        <!-- close header -->
+
+        <!-- main -->
+        <main id="home" class="bg-black lg:mt-24 mt-8">
+            <!-- hero -->
+            <section
+                id="hero"
+                class="container mx-auto flex flex-col items-center text-center px-4 lg:px-0"
+            >
+                <h1 class="max-w-full lg:max-w-[745.639px] text-h1">
+                    Connect with blockchain ecosystem easily
+                </h1>
+                <p class="max-w-full lg:max-w-[746.336px] text-desc mt-4">
+                    BTS Holdings is a DeFi platform that uses community
+                    marketing to build a vibrant decentralized web3 community,
+                    Blockchain layer 0, and a decentralized exchange.
+                </p>
+                <div
+                    class="img-hero lg:mt-[78px] mt-[24px] static z-10 w-full flex justify-center"
+                >
+                    <img src="/imgs/hero.png" alt="" class="w-full lg:w-auto" />
+                </div>
+                <div class="absolute top-0 left-0 pointer-events-none">
+                    <img src="/imgs/L.png" alt="" />
+                </div>
+                <div class="absolute top-0 right-0 pointer-events-none">
+                    <img src="/imgs/R.png" alt="" />
+                </div>
+            </section>
+
+            <!-- close hero -->
+            <!-- Trusted Partners -->
+            <section id="trusted" class="mt-[86px] mb-[80px]">
+                <div class="container text-center">
+                    <h2 class="title-h2-gradient">Trusted Partners</h2>
+                    <div class="trusted-slider mt-[60px]">
+                        <div class="trusted-item">
+                            <img src="/imgs/binance.svg" alt="Binance" />
+                        </div>
+                        <div class="trusted-item">
+                            <img src="/imgs/binance.svg" alt="Binance" />
+                        </div>
+                        <div class="trusted-item">
+                            <img src="/imgs/binance.svg" alt="Binance" />
+                        </div>
+                        <div class="trusted-item">
+                            <img src="/imgs/binance.svg" alt="Binance" />
+                        </div>
+                        <div class="trusted-item">
+                            <img src="/imgs/binance.svg" alt="Binance" />
+                        </div>
+                        <div class="trusted-item">
+                            <img src="/imgs/binance.svg" alt="Binance" />
+                        </div>
+                        <div class="trusted-item">
+                            <img src="/imgs/binance.svg" alt="Binance" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- close Trusted Partners -->
+            <!-- start -->
+            <section id="start" class="mt-[140px]">
+                <div class="container">
+                    <div class="flex justify-between items-end">
+                        <h2 class="title-h2 max-w-[388px] text-white">
+                            Start build on the BTS Holding Chain
+                        </h2>
+                        <button
+                            class="hidden md:flex items-center justify-center h-10 px-4 py-2 gap-2 rounded-full border border-custom-gray shadow-btn bg-custom-gradient text-btn"
+                        >
+                            Read more
+                            <img src="/imgs/arrow-1.svg" alt="" />
+                        </button>
+                    </div>
+                    <div class="mt-[52px]">
+                        <img class="w-full" src="./imgs/start.png" alt="" />
+                    </div>
+                </div>
+            </section>
+            <!-- close start -->
+            <!-- Value -->
+            <section id="value" class="container mx-auto mt-[140px]">
+                <h2
+                    class="mb-[66px] mx-auto text-center title-h2 max-w-[367px]"
+                >
+                    We bring value for community
+                </h2>
+                <div
+                    class="flex lg:flex-row flex-col gap-[28px] lg:mb-[54px] mb-[24px] lg:mt-[0] mt-[24px]"
+                >
+                    <div
+                        class="lg:w-2/3 w-full px-[36px] py-[40px] gradient-card rounded-3xl"
+                    >
+                        <h4 class="text-title-32 text-[#2BA4FA]">
+                            Most Probably Included Best Features Eve
+                        </h4>
+                        <p class="max-w-[540px] text-desc-page mt-[14.69px]">
+                            BTS Holdings is a decentralized finance (DeFi)
+                            platform that uses a community marketing approach to
+                            build a strong and vibrant community. This method
+                            has been researched and developed by a team of
+                            experts for many years and has been successful in
+                            many different fields.
+                        </p>
+                    </div>
+                    <div
+                        class="lg:w-1/3 w-full py-[50px] justify-center bg-custom-gradient-124deg rounded-3xl lg:flex hidden"
+                    >
+                        <div class="w-[200px] h-[200px]">
+                            <img
+                                class="object-cover w-full h-full"
+                                src="./imgs/we-arr.png"
+                                alt=""
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex lg:flex-row flex-col gap-[28px]">
+                    <div
+                        class="lg:w-2/3 w-full flex lg:flex-row flex-col gap-[28px]"
+                    >
+                        <div
+                            class="w-1/3 py-[50px] justify-center rounded-3xl bg-gradient-green lg:flex hidden"
+                        >
+                            <div class="w-[170px] h-[170px]">
+                                <img
+                                    class="object-cover w-full h-full"
+                                    src="./imgs/we-success.png"
+                                    alt=""
+                                />
+                            </div>
+                        </div>
+                        <div
+                            class="lg:w-2/3 w-full px-[34px] py-[40px] gradient-card rounded-3xl"
+                        >
+                            <h4 class="text-title-32">Absolutely safe</h4>
+                            <p class="text-desc-page mt-[17px]">
+                                After the BTS Chain mainnet platform is launched
+                                in November 2023, it will be a secure, fast and
+                                outstanding platform.
+                            </p>
+                            <div
+                                class="w-full h-[16px] bg-[#181818] rounded-3xl mt-[40px]"
+                            >
+                                <p
+                                    class="bg-gradient-green-135 w-[70%] h-full rounded-3xl"
+                                ></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="lg:w-1/3 w-full px-[34px] py-[40px] gradient-card rounded-3xl"
+                    >
+                        <h4 class="text-title-32">Absolutely safe</h4>
+                        <p class="text-desc-page mt-[17px]">
+                            After the BTS Chain mainnet platform is launched in
+                            November 2023, it will be a secure, fast and
+                            outstanding platform.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- close value -->
+            <!-- largest -->
+            <section id="largest" class="lg:mt-[190px] mt-[68px]">
+                <div class="container">
+                    <h2 class="mb-[66px] title-h2 max-w-[476px]">
+                        The largest and <br />
+                        most thriving ecosystem
+                    </h2>
+                    <div class="grid-auto-3 gap-[26px]">
+                        <div
+                            class="px-[34px] py-[40px] gradient-card rounded-3xl"
+                        >
+                            <h4 class="text-20">TELEGRAM COMUNITY</h4>
+                            <p class="text-desc-page mt-[10px]">
+                                Lorem Ipsum is simply dummy text of the printing
+                                and typesetting industry.
+                            </p>
+                            <div
+                                class="flex justify-between lg:mt-[85px] mt-[24px] items-center"
+                            >
+                                <span
+                                    class="bg-custom-gradient lg:text-48 text-title-32 backgroundClip"
+                                >
+                                    5000+
+                                </span>
+                                <img src="./imgs/tele.svg" alt="" />
+                            </div>
+                        </div>
+                        <div
+                            class="px-[34px] py-[40px] gradient-card rounded-3xl"
+                        >
+                            <h4 class="text-20">X FOLLOWERS</h4>
+                            <p class="text-desc-page mt-[10px]">
+                                Lorem Ipsum is simply dummy text of the printing
+                                and typesetting industry.
+                            </p>
+                            <div
+                                class="flex justify-between lg:mt-[85px] mt-[24px] items-center"
+                            >
+                                <span
+                                    class="bg-custom-gradient lg:text-48 text-title-32 backgroundClip"
+                                >
+                                    5000+
+                                </span>
+                                <img src="./imgs/x.svg" alt="" />
+                            </div>
+                        </div>
+                        <div
+                            class="px-[34px] py-[40px] gradient-card rounded-3xl"
+                        >
+                            <h4 class="text-20">USER TRANSACTION</h4>
+                            <p class="text-desc-page mt-[10px]">
+                                Lorem Ipsum is simply dummy text of the printing
+                                and typesetting industry.
+                            </p>
+                            <div
+                                class="flex justify-between lg:mt-[85px] mt-[24px] items-center"
+                            >
+                                <span
+                                    class="bg-gradient-red-135 lg:text-48 text-title-32 backgroundClip"
+                                >
+                                    5000+
+                                </span>
+                                <img src="./imgs/user.svg" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- close largest -->
+            <!-- Beautifully  -->
+            <section id="beautifully" class="mt-[170px] xl:w-[1440px] mx-auto">
+                <div class="container">
+                    <h2 class="mb-[66px] title-h2 max-w-[513px]">
+                        Beautifully Crafted All App Screenshots
+                    </h2>
+                    <div class="slider-beautifully">
+                        <div>
+                            <div class="beautifully-item flex gap-[60px]">
+                                <div class="w-[300px] flex-shrink-0 relative">
+                                    <img
+                                        class="w-full h-full object-cover"
+                                        src="./imgs/ip14.png"
+                                        alt=""
+                                    />
+                                    <div
+                                        class="bg-gradient-ip14 absolute -bottom-1/4 left-0 h-1/2 w-full"
+                                    ></div>
+                                </div>
+                                <div
+                                    class="rounded-3xl gradient-card w-[335px] p-[14px] h-[518px]"
+                                >
+                                    <div class="p-[24px] rounded-2xl bg-black">
+                                        <h4
+                                            class="text-36 backgroundClip bg-custom-gradient"
+                                        >
+                                            Community Social App
+                                        </h4>
+                                        <p class="text-desc-page mt-[25px]">
+                                            Lorem Ipsum is simply dummy text of
+                                            the printing and typesetting
+                                            industry. Lorem Ipsum has been
+                                        </p>
+                                        <button
+                                            class="hover:opacity-80 mt-[25px]"
+                                        >
+                                            <img src="./imgs/btn.svg" alt="" />
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="beautifully-item flex gap-[60px]">
+                                <div class="w-[300px] flex-shrink-0 relative">
+                                    <img
+                                        class="w-full h-full object-cover"
+                                        src="./imgs/ip14-1.png"
+                                        alt=""
+                                    />
+                                    <div
+                                        class="bg-gradient-ip14 absolute -bottom-1/4 left-0 h-1/2 w-full"
+                                    ></div>
+                                </div>
+                                <div
+                                    class="rounded-3xl gradient-card w-[335px] p-[14px] h-[518px]"
+                                >
+                                    <div class="p-[24px] rounded-2xl bg-black">
+                                        <h4
+                                            class="text-36 backgroundClip bg-custom-gradient"
+                                        >
+                                            Decentralized Wallet
+                                        </h4>
+                                        <p class="text-desc-page mt-[25px]">
+                                            Lorem Ipsum is simply dummy text of
+                                            the printing and typesetting
+                                            industry. Lorem Ipsum has been
+                                        </p>
+                                        <button
+                                            class="hover:opacity-80 mt-[25px]"
+                                        >
+                                            <img src="./imgs/btn.svg" alt="" />
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="beautifully-item flex gap-[60px]">
+                                <div class="w-[300px] flex-shrink-0 relative">
+                                    <img
+                                        class="w-full h-full object-cover"
+                                        src="./imgs/ip14-2.png"
+                                        alt=""
+                                    />
+                                    <div
+                                        class="bg-gradient-ip14 absolute -bottom-1/4 left-0 h-1/2 w-full"
+                                    ></div>
+                                </div>
+                                <div
+                                    class="rounded-3xl gradient-card w-[335px] p-[14px] h-[518px]"
+                                >
+                                    <div class="p-[24px] rounded-2xl bg-black">
+                                        <h4
+                                            class="text-36 backgroundClip bg-custom-gradient"
+                                        >
+                                            Social-Fi
+                                        </h4>
+                                        <p class="text-desc-page mt-[25px]">
+                                            Lorem Ipsum is simply dummy text of
+                                            the printing and typesetting
+                                            industry. Lorem Ipsum has been
+                                        </p>
+                                        <button
+                                            class="hover:opacity-80 mt-[25px]"
+                                        >
+                                            <img src="./imgs/btn.svg" alt="" />
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--close  Beautifully  -->
+            <!-- BTS -->
+            <section id="bts" class="mt-[92px] mb-[94px]">
+                <div class="container">
+                    <h2
+                        class="mb-[66px] title-h2 mx-auto text-center max-w-[476px]"
+                    >
+                        BTS Holding Insights
+                    </h2>
+                    <div class="grid-auto-3 gap-[24px]">
+                        <div class="rounded-3xl overflow-hidden bg-[#161616]">
+                            <div class="aspect-video">
+                                <img
+                                    class="img-full"
+                                    src="./imgs/bts-1.png"
+                                    alt=""
+                                />
+                            </div>
+                            <div class="lg:p-[32px] p-[14px]">
+                                <h4 class="text-28">
+                                    Lorem ipsum dolor sit amet, consectetur
+                                </h4>
+                                <p
+                                    class="text-[#9E9E9E] text-16 mt-[15px] mb-[24px]"
+                                >
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit, sed do eiusmod tempor.
+                                </p>
+                                <button class="hover:opacity-80 w-full">
+                                    <img
+                                        class="img-full"
+                                        src="./imgs/btn-coindesk.svg"
+                                        alt=""
+                                    />
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rounded-3xl overflow-hidden bg-[#161616]">
+                            <div class="aspect-video">
+                                <img
+                                    class="img-full"
+                                    src="./imgs/bts-2.png"
+                                    alt=""
+                                />
+                            </div>
+                            <div class="lg:p-[32px] p-[14px]">
+                                <h4 class="text-28">
+                                    Lorem ipsum dolor sit amet, consectetur
+                                </h4>
+                                <p
+                                    class="text-[#9E9E9E] text-16 mt-[15px] mb-[24px]"
+                                >
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit, sed do eiusmod tempor.
+                                </p>
+                                <button class="hover:opacity-80 w-full">
+                                    <img
+                                        class="img-full"
+                                        src="./imgs/btn-coindesk.svg"
+                                        alt=""
+                                    />
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rounded-3xl overflow-hidden bg-[#161616]">
+                            <div class="aspect-video">
+                                <img
+                                    class="img-full"
+                                    src="./imgs/bts-3.png"
+                                    alt=""
+                                />
+                            </div>
+                            <div class="lg:p-[32px] p-[14px]">
+                                <h4 class="text-28">
+                                    Lorem ipsum dolor sit amet, consectetur
+                                </h4>
+                                <p
+                                    class="text-[#9E9E9E] text-16 mt-[15px] mb-[24px]"
+                                >
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit, sed do eiusmod tempor.
+                                </p>
+                                <button class="hover:opacity-80 w-full">
+                                    <img
+                                        class="img-full"
+                                        src="./imgs/btn-coindesk.svg"
+                                        alt=""
+                                    />
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- close BTS -->
+            <!-- download -->
+            <section
+                id="download"
+                class="bg-download lg:h-[700px] h-[350px] mx-auto text-center relative w-full xl:w-[1440px]"
+            >
+                <div
+                    class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full px-4 lg:px-0"
+                >
+                    <h2 class="text-48-600 max-w-full lg:max-w-[600px] mx-auto">
+                        Download app and Discover the Fantastic experience
+                    </h2>
+                    <div
+                        class="flex gap-[24px] lg:mt-[60px] mt-[24px] justify-center"
+                    >
+                        <button>
+                            <img
+                                src="./imgs/app-store.png"
+                                alt="Download on the App Store"
+                            />
+                        </button>
+                        <button>
+                            <img
+                                src="./imgs/gg-play.png"
+                                alt="Get it on Google Play"
+                            />
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- close download -->
+        </main>
+        <!-- close main -->
+
+        <!-- footer -->
+        <footer
+            style="z-index: -1"
+            class="pt-[40px] pb-[70px] bg-[#0f0f0f] border-t-[#1b1d1f] sticky bottom-0"
+        >
+            <div class="container mx-auto flex flex-wrap justify-between">
+                <div class="w-full md:w-2/6 mb-8 md:mb-0">
+                    <h3 class="text-20-footer">BTS Holding</h3>
+                    <p
+                        class="text-14 text-[#B1B3B9] max-w-[330px] mt-[10px] mb-[33px]"
+                    >
+                        Manage and track your ATH staking and rewards. Engage
+                        with the Aethir ecosystem.
+                    </p>
+                    <p class="text-[#B1B3B9]">
+                        &copy; 2024 BTS Holding. All Rights Reserved.
+                    </p>
+                </div>
+                <div class="w-full md:w-auto flex flex-wrap md:flex-nowrap">
+                    <div
+                        class="w-1/2 md:w-auto mr-0 md:mr-[74px] min-w-[164px] mb-4 md:mb-0"
+                    >
+                        <h3 class="text-16-category">Ecosystem</h3>
+                        <ul class="mt-2">
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-14 text-[#b1b3b9] hover:underline"
+                                    >Mining</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-14 text-[#b1b3b9] hover:underline"
+                                    >Prompt AI</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-14 text-[#b1b3b9] hover:underline"
+                                    >Referral Program</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-14 text-[#b1b3b9] hover:underline"
+                                    >Multichain DEX</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-14 text-[#b1b3b9] hover:underline"
+                                    >Decentralized Perpetual Exchange</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <div
+                        class="w-1/2 md:w-auto mr-0 md:mr-[34px] min-w-[164px] mb-4 md:mb-0"
+                    >
+                        <h3 class="text-16-category">Community</h3>
+                        <ul class="mt-2">
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-14 text-[#b1b3b9] hover:underline"
+                                    >Join Discord</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-14 text-[#b1b3b9] hover:underline"
+                                    >Join Community</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="w-1/2 md:w-auto min-w-[164px]">
+                        <h3 class="text-16-category">Legal</h3>
+                        <ul class="mt-2">
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-14 text-[#b1b3b9] hover:underline"
+                                    >Privacy Policy</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-14 text-[#b1b3b9] hover:underline"
+                                    >General Terms of Service</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- close footer -->
+
+        <!-- js -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script src="./js/main.js"></script>
+    </body>
+</html>
