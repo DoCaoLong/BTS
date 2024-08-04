@@ -824,6 +824,10 @@ select {
   bottom: -25%;
 }
 
+.bottom-0 {
+  bottom: 0px;
+}
+
 .left-0 {
   left: 0px;
 }
@@ -844,16 +848,8 @@ select {
   top: 50%;
 }
 
-.bottom-0 {
-  bottom: 0px;
-}
-
 .z-10 {
   z-index: 10;
-}
-
-.-z-0 {
-  z-index: 0;
 }
 
 .mx-auto {
@@ -875,10 +871,6 @@ select {
 
 .mb-\[33px\] {
   margin-bottom: 33px;
-}
-
-.mb-\[54px\] {
-  margin-bottom: 54px;
 }
 
 .mb-\[66px\] {
@@ -933,6 +925,10 @@ select {
   margin-top: 17px;
 }
 
+.mt-\[24px\] {
+  margin-top: 24px;
+}
+
 .mt-\[25px\] {
   margin-top: 25px;
 }
@@ -953,24 +949,12 @@ select {
   margin-top: 68px;
 }
 
-.mt-\[78px\] {
-  margin-top: 78px;
-}
-
-.mt-\[85px\] {
-  margin-top: 85px;
-}
-
 .mt-\[86px\] {
   margin-top: 86px;
 }
 
 .mt-\[92px\] {
   margin-top: 92px;
-}
-
-.mt-\[24px\] {
-  margin-top: 24px;
 }
 
 .block {
@@ -1013,8 +997,8 @@ select {
   height: 200px;
 }
 
-.h-\[500px\] {
-  height: 500px;
+.h-\[350px\] {
+  height: 350px;
 }
 
 .h-\[518px\] {
@@ -1023,14 +1007,6 @@ select {
 
 .h-full {
   height: 100%;
-}
-
-.h-\[300px\] {
-  height: 300px;
-}
-
-.h-\[350px\] {
-  height: 350px;
 }
 
 .w-1\/2 {
@@ -1282,10 +1258,6 @@ select {
   padding: 24px;
 }
 
-.p-\[32px\] {
-  padding: 32px;
-}
-
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -1331,11 +1303,6 @@ select {
 
 .text-center {
   text-align: center;
-}
-
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
 }
 
 .capitalize {
@@ -1610,12 +1577,6 @@ body {
   outline-offset: 2px;
 }
 
-@media (min-width: 480px) {
-  .sm\:mt-\[24px\] {
-    margin-top: 24px;
-  }
-}
-
 @media (min-width: 768px) {
   .md\:mb-0 {
     margin-bottom: 0px;
@@ -1648,40 +1609,35 @@ body {
   .md\:flex-nowrap {
     flex-wrap: nowrap;
   }
-
-  .md\:px-0 {
-    padding-left: 0px;
-    padding-right: 0px;
-  }
 }
 
 @media (min-width: 1160px) {
-  .lg\:mt-24 {
-    margin-top: 6rem;
-  }
-
-  .lg\:mt-\[190px\] {
-    margin-top: 190px;
-  }
-
   .lg\:mb-\[54px\] {
     margin-bottom: 54px;
+  }
+
+  .lg\:mt-24 {
+    margin-top: 6rem;
   }
 
   .lg\:mt-\[0\] {
     margin-top: 0;
   }
 
-  .lg\:mt-\[85px\] {
-    margin-top: 85px;
+  .lg\:mt-\[190px\] {
+    margin-top: 190px;
+  }
+
+  .lg\:mt-\[60px\] {
+    margin-top: 60px;
   }
 
   .lg\:mt-\[78px\] {
     margin-top: 78px;
   }
 
-  .lg\:mt-\[60px\] {
-    margin-top: 60px;
+  .lg\:mt-\[85px\] {
+    margin-top: 85px;
   }
 
   .lg\:flex {
