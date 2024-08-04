@@ -50,3 +50,8 @@ body {
 .bg-download {
     background: url("/imgs/dow-banner.png");
 }
+
+.header-bg {
+    background-color: rgba(0, 0, 0, 0.9);
+    transition: background-color 0.3s ease-in-out;
+}

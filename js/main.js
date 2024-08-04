@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const mobileMenu = document.getElementById("mobile-menu");
     const backdrop = document.getElementById("backdrop");
     const navLinks = document.querySelectorAll("nav a");
+    const header = document.getElementById("header");
 
     menuToggle.addEventListener("click", () => {
         mobileMenu.classList.add("mobile-menu-active");
@@ -30,6 +31,14 @@ document.addEventListener("DOMContentLoaded", function () {
             mobileMenu.classList.remove("mobile-menu-active");
             backdrop.classList.remove("backdrop-active");
         });
+    });
+
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 100) {
+            header.classList.add("header-bg");
+        } else {
+            header.classList.remove("header-bg");
+        }
     });
 
     // trunsted
@@ -64,13 +73,13 @@ document.addEventListener("DOMContentLoaded", function () {
     ScrollReveal().reveal(".text-h1", {
         delay: 500,
         origin: "bottom",
-        duration: 1500,
+        duration: 500,
         distance: "20px",
     });
     ScrollReveal().reveal(".text-desc", {
         delay: 1000,
         origin: "bottom",
-        duration: 1500,
+        duration: 1000,
         distance: "20px",
     });
     ScrollReveal().reveal(".img-hero", {
@@ -81,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     ScrollReveal().reveal(".logo", { delay: 100 });
     ScrollReveal().reveal(".text-nav", {
-        interval: 200,
+        interval: 100,
         origin: "left",
         delay: 500,
     });
@@ -93,31 +102,31 @@ document.addEventListener("DOMContentLoaded", function () {
         distance: "20px",
     });
     ScrollReveal().reveal("#trusted", {
-        delay: 500,
+        delay: 300,
         origin: "bottom",
         duration: 1500,
         distance: "20px",
     });
     ScrollReveal().reveal("#start", {
-        delay: 500,
+        delay: 300,
         origin: "bottom",
         duration: 1500,
         distance: "20px",
     });
     ScrollReveal().reveal("#value", {
-        delay: 500,
+        delay: 300,
         origin: "bottom",
         duration: 1500,
         distance: "20px",
     });
     ScrollReveal().reveal("#largest", {
-        delay: 500,
+        delay: 300,
         origin: "bottom",
         duration: 1500,
         distance: "20px",
     });
     ScrollReveal().reveal("#beautifully", {
-        delay: 500,
+        delay: 300,
         origin: "bottom",
         duration: 1500,
         distance: "20px",
@@ -129,13 +138,13 @@ document.addEventListener("DOMContentLoaded", function () {
         distance: "20px",
     });
     ScrollReveal().reveal("#download", {
-        delay: 500,
+        delay: 300,
         origin: "bottom",
         duration: 1500,
         distance: "20px",
     });
     ScrollReveal().reveal("footer", {
-        delay: 500,
+        delay: 300,
         origin: "bottom",
         duration: 1500,
         distance: "20px",

@@ -901,10 +901,6 @@ select {
   margin-top: 1rem;
 }
 
-.mt-8 {
-  margin-top: 2rem;
-}
-
 .mt-\[10px\] {
   margin-top: 10px;
 }
@@ -959,10 +955,6 @@ select {
 
 .mt-\[92px\] {
   margin-top: 92px;
-}
-
-.mt-24 {
-  margin-top: 6rem;
 }
 
 .block {
@@ -1053,32 +1045,12 @@ select {
   width: 70%;
 }
 
-.w-full {
-  width: 100%;
-}
-
-.w-24 {
-  width: 6rem;
-}
-
-.w-16 {
-  width: 4rem;
-}
-
-.w-10 {
-  width: 2.5rem;
-}
-
-.w-\[20px\] {
-  width: 20px;
-}
-
-.w-\[40px\] {
-  width: 40px;
-}
-
 .w-\[70px\] {
   width: 70px;
+}
+
+.w-full {
+  width: 100%;
 }
 
 .min-w-\[164px\] {
@@ -1329,12 +1301,12 @@ select {
   padding-bottom: 70px;
 }
 
-.pt-\[40px\] {
-  padding-top: 40px;
-}
-
 .pt-24 {
   padding-top: 6rem;
+}
+
+.pt-\[40px\] {
+  padding-top: 40px;
 }
 
 .text-center {
@@ -1600,6 +1572,11 @@ body {
   background: url("/imgs/dow-banner.png");
 }
 
+.header-bg {
+  background-color: rgba(0, 0, 0, 0.9);
+  transition: background-color 0.3s ease-in-out;
+}
+
 .hover\:underline:hover {
   text-decoration-line: underline;
 }
@@ -1611,12 +1588,6 @@ body {
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
-}
-
-@media (min-width: 480px) {
-  .sm\:w-6 {
-    width: 1.5rem;
-  }
 }
 
 @media (min-width: 768px) {
@@ -1634,10 +1605,6 @@ body {
 
   .md\:flex {
     display: flex;
-  }
-
-  .md\:hidden {
-    display: none;
   }
 
   .md\:w-2\/6 {
@@ -1658,10 +1625,6 @@ body {
     margin-bottom: 54px;
   }
 
-  .lg\:mt-24 {
-    margin-top: 6rem;
-  }
-
   .lg\:mt-\[0\] {
     margin-top: 0;
   }
@@ -1680,10 +1643,6 @@ body {
 
   .lg\:mt-\[85px\] {
     margin-top: 85px;
-  }
-
-  .lg\:mt-40 {
-    margin-top: 10rem;
   }
 
   .lg\:flex {
