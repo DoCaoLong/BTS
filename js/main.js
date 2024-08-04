@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const closeMenu = document.getElementById("close-menu");
     const mobileMenu = document.getElementById("mobile-menu");
     const backdrop = document.getElementById("backdrop");
+    const navLinks = document.querySelectorAll("nav a");
 
     menuToggle.addEventListener("click", () => {
         mobileMenu.classList.add("mobile-menu-active");
@@ -17,6 +18,18 @@ document.addEventListener("DOMContentLoaded", function () {
     backdrop.addEventListener("click", () => {
         mobileMenu.classList.remove("mobile-menu-active");
         backdrop.classList.remove("backdrop-active");
+    });
+
+    navLinks.forEach((link) => {
+        link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = link.getAttribute("href").substring(1);
+            document.getElementById(targetId).scrollIntoView({
+                behavior: "smooth",
+            });
+            mobileMenu.classList.remove("mobile-menu-active");
+            backdrop.classList.remove("backdrop-active");
+        });
     });
 
     // trunsted

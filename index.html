@@ -22,7 +22,7 @@
             .mobile-menu {
                 transition: transform 0.3s ease-in-out;
                 transform: translateX(100%);
-                z-index: 12;
+                z-index: 23;
             }
             .mobile-menu-active {
                 transform: translateX(0);
@@ -30,7 +30,7 @@
             .backdrop {
                 display: none;
                 transition: opacity 0.3s ease-in-out;
-                z-index: 11;
+                z-index: 21;
             }
             .backdrop-active {
                 display: block;
@@ -67,46 +67,73 @@
     </head>
     <body class="bg-black mx-auto relative">
         <!-- header -->
-        <header class="bg-black z-10 static">
+        <header class="bg-black z-20 relative">
             <div
-                class="container mx-auto flex justify-between items-center py-4 px-4 lg:px-0"
+                class="container mx-auto flex justify-between items-center py-4 px-4 lg:px-0 fixed top-0 left-0 right-0"
             >
                 <div class="flex items-center gap-6">
-                    <div class="logo cursor-pointer z-10 static">
-                        <img src="./imgs/logo.svg" alt="Logo" />
-                    </div>
-                    <nav class="hidden md:flex space-x-2">
+                    <a
+                        href="/"
+                        class="logo cursor-pointer z-10 relative lg:w-full w-[70px]"
+                    >
+                        <img
+                            class="img-full"
+                            src="./imgs/logo.svg"
+                            alt="Logo"
+                        />
+                    </a>
+                    <nav class="hidden lg:flex space-x-2">
                         <a
-                            href="#"
+                            href="#hero"
                             class="hover:text-gray-400 px-4 py-2 text-nav"
                             >Home</a
                         >
                         <a
-                            href="#"
+                            href="#trusted"
                             class="hover:text-gray-400 px-4 py-2 text-nav"
-                            >About Us</a
+                            >Trusted</a
                         >
                         <a
-                            href="#"
+                            href="#start"
                             class="hover:text-gray-400 px-4 py-2 text-nav"
-                            >Roadmap</a
+                            >Start</a
                         >
                         <a
-                            href="#"
+                            href="#value"
                             class="hover:text-gray-400 px-4 py-2 text-nav"
-                            >Docs</a
-                        >
+                            >Value
+                        </a>
+                        <a
+                            href="#largest"
+                            class="hover:text-gray-400 px-4 py-2 text-nav"
+                            >Ecosystem
+                        </a>
+                        <a
+                            href="#beautifully"
+                            class="hover:text-gray-400 px-4 py-2 text-nav"
+                            >Screenshots
+                        </a>
+                        <a
+                            href="#bts"
+                            class="hover:text-gray-400 px-4 py-2 text-nav"
+                            >BTS
+                        </a>
+                        <a
+                            href="#download"
+                            class="hover:text-gray-400 px-4 py-2 text-nav"
+                            >Download
+                        </a>
                     </nav>
                 </div>
                 <button
-                    class="text-nav hidden md:flex items-center justify-center h-10 px-4 py-2 gap-2 rounded-full border border-custom-gray shadow-btn bg-custom-gradient text-btn"
+                    class="text-nav hidden lg:flex items-center justify-center h-10 px-4 py-2 gap-2 rounded-full border border-custom-gray shadow-btn bg-custom-gradient text-btn"
                 >
                     Read more
                     <img src="/imgs/arrow-1.svg" alt="" />
                 </button>
                 <button
                     id="menu-toggle"
-                    class="md:hidden text-white focus:outline-none"
+                    class="lg:hidden text-white focus:outline-none"
                 >
                     <svg
                         class="w-6 h-6"
@@ -156,24 +183,44 @@
                 </button>
             </div>
             <nav class="flex flex-col items-center space-y-2 py-4">
-                <a href="#" class="hover:text-gray-400 px-4 py-2 text-nav"
+                <a href="#hero" class="hover:text-gray-400 px-4 py-2 text-nav"
                     >Home</a
                 >
-                <a href="#" class="hover:text-gray-400 px-4 py-2 text-nav"
-                    >About Us</a
+                <a
+                    href="#trusted"
+                    class="hover:text-gray-400 px-4 py-2 text-nav"
+                    >Trusted</a
                 >
-                <a href="#" class="hover:text-gray-400 px-4 py-2 text-nav"
-                    >Roadmap</a
+                <a href="#start" class="hover:text-gray-400 px-4 py-2 text-nav"
+                    >Start</a
                 >
-                <a href="#" class="hover:text-gray-400 px-4 py-2 text-nav"
-                    >Docs</a
-                >
+                <a href="#value" class="hover:text-gray-400 px-4 py-2 text-nav"
+                    >Value
+                </a>
+                <a
+                    href="#largest"
+                    class="hover:text-gray-400 px-4 py-2 text-nav"
+                    >Ecosystem
+                </a>
+                <a
+                    href="#beautifully"
+                    class="hover:text-gray-400 px-4 py-2 text-nav"
+                    >Screenshots
+                </a>
+                <a href="#bts" class="hover:text-gray-400 px-4 py-2 text-nav"
+                    >BTS
+                </a>
+                <a
+                    href="#download"
+                    class="hover:text-gray-400 px-4 py-2 text-nav"
+                    >Download
+                </a>
             </nav>
         </div>
         <!-- close header -->
 
         <!-- main -->
-        <main id="home" class="bg-black lg:mt-24 mt-8">
+        <main id="home" class="bg-black lg:pt-40 pt-24">
             <!-- hero -->
             <section
                 id="hero"
